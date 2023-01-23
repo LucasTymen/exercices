@@ -1,19 +1,7 @@
 console.log("hi");
 console.log("Make your choice : Rock - Paper, or Scissors ! Choose wisely.");
-let userScore = 0;
-let computerScore = 0;
 
-const userChoice = () => {
-  switch (userChoice) {
-    case 0:
-      return "rock";
-    case 1:
-      return "paper";
-    case 2:
-      return "scissors";
-  }
-};
-
+var computerChoice = ''
 const getUserChoice = userInput => {
   userInput = userInput.toLowerCase();
   if (
@@ -27,10 +15,10 @@ const getUserChoice = userInput => {
   }
 };
 
-console.log("Player's choice : ---->  "+getUserChoice("rock"));
-console.log(userChoice['2']);
+console.log("Player's choice : ---->  " + getUserChoice("rock"));
+//console.log(userChoice["2"]);
 
-const computerChoice = () => {
+const getComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * 3);
   switch (randomNumber) {
     case 0:
@@ -70,18 +58,11 @@ const determineWinner = (userChoice, computerChoice) => {
 };
 
 const playGame = () => {
-  const userChoice = getUserChoice('scissors');
+  const userChoice = getUserChoice("scissors");
   const computerChoice = getComputerChoice();
-  console.log('You threw: ' + userChoice);
-  console.log('The computer threw:' + computerChoice);
+  console.log("You threw: " + userChoice);
+  console.log("The computer threw:" + computerChoice);
+  console.log(determineWinner(userChoice, computerChoice));
 };
 
-
-console.log("---------------------");
-determineWinner;
-console.log(computerChoice());
-console.log(determineWinner());
-console.log("---------------------");
-console.log(determineWinner('rock', 'scissors'))
-console.log(determineWinner('paper', 'scissors'))
-console.log(determineWinner('rock', 'rock'))
+playGame()
