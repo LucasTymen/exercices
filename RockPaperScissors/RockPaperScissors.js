@@ -7,15 +7,18 @@ const getUserChoice = userInput => {
   if (
     userInput === "rock" ||
     userInput === "paper" ||
-    userInput === "scissors"
+    userInput === "scissors" ||
+    userInput === "bomb"
   ) {
     return userInput;
+  } else if (userInput === "bomb"){
+    console.log("player just BOMBED the game, sorry PC !")
   } else {
     console.log("port nawak !!! type rock, paper, or scissors");
   }
 };
 
-console.log("Player's choice : ---->  " + getUserChoice("rock"));
+//console.log("Player's choice : ---->  " + getUserChoice("rock"));
 //console.log(userChoice["2"]);
 
 const getComputerChoice = () => {
@@ -55,10 +58,17 @@ const determineWinner = (userChoice, computerChoice) => {
       return "congratulation, you won";
     }
   }
+    if (userChoice === "bomb") {
+    if (computerChoice === "rock" || computerChoice === "paper" ||computerChoice === "scissors" ) {
+      return "player just BOMBED the game, sorry PC !";
+    } else {
+      return "player just BOMBED the game, sorry PC !";
+    }
+  }
 };
 
 const playGame = () => {
-  const userChoice = getUserChoice("scissors");
+  const userChoice = getUserChoice("bomb");
   const computerChoice = getComputerChoice();
   console.log("You threw: " + userChoice);
   console.log("The computer threw:" + computerChoice);
